@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_pearsons",
+  "info": {
+    "singularName": "contact-pearson",
+    "pluralName": "contact-pearsons",
+    "displayName": "Contact Pearson",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "middle_name": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "contact_pearsons"
+    },
+    "emails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "email.email"
+    },
+    "phone_numbers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "phone-number.phone-number"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "contact_pearson"
+    }
+  }
+}

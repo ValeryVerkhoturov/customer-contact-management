@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Task",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contract_number": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "equipment_serial_number": {
+      "type": "string",
+      "required": false,
+      "maxLength": 50
+    },
+    "date_of_task_creation": {
+      "type": "datetime",
+      "required": true
+    },
+    "execution_date_from": {
+      "type": "date"
+    },
+    "execution_date_to": {
+      "type": "date"
+    },
+    "is_finished": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "author_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "executor_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "low",
+        "middle",
+        "high"
+      ],
+      "required": true
+    }
+  }
+}

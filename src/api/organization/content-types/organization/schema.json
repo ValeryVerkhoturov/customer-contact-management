@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "Organization",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "organization_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "contact_pearsons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact-pearson.contact-pearson",
+      "mappedBy": "organization"
+    },
+    "emails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "email.email"
+    },
+    "phone_numbers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "phone-number.phone-number"
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": [
+        "current",
+        "potential"
+      ],
+      "required": true,
+      "private": true
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    }
+  }
+}

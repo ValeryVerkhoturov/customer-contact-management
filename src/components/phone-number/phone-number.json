@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_phone_number_phone_numbers",
+  "info": {
+    "displayName": "Phone number",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "phone_number": {
+      "type": "string",
+      "regex": "^[\\+]?[7,8]{1}[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{2}[-\\s\\.]?[0-9]{2}",
+      "required": true,
+      "maxLength": 17
+    }
+  }
+}
