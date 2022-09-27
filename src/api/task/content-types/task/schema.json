@@ -28,7 +28,7 @@
     "execution_date_from": {
       "type": "date"
     },
-    "execution_date_to": {
+    "execution_plan_date_to": {
       "type": "date"
     },
     "is_finished": {
@@ -54,6 +54,9 @@
         "high"
       ],
       "required": true
+    },
+    "execution_actulal_date_to": {
+      "type": "date"
     }
   }
 }
