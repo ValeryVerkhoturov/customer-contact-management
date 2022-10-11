@@ -23,18 +23,13 @@
     },
     "date_of_task_creation": {
       "type": "datetime",
-      "required": true
+      "required": false
     },
     "execution_date_from": {
       "type": "date"
     },
     "execution_plan_date_to": {
       "type": "date"
-    },
-    "is_finished": {
-      "type": "boolean",
-      "default": false,
-      "required": true
     },
     "author_user": {
       "type": "relation",

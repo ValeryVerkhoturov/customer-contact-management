@@ -17,6 +17,7 @@
     "@strapi/strapi": "4.3.9",
     "pg": "8.6.0",
     "sharp": "^0.31.0",
+    "slugify": "^1.6.5",
     "strapi-plugin-import-export-entries": "^1.15.0"
   },
   "author": {
