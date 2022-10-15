@@ -50,8 +50,13 @@
       ],
       "required": true
     },
-    "execution_actulal_date_to": {
+    "execution_actual_date_to": {
       "type": "date"
+    },
+    "is_finished": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

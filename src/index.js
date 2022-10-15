@@ -31,19 +31,11 @@ module.exports = {
             return {$or : [
                 { "author_user.id" : user.id},
                 { "executor_user.id" : user.id},
-                { "author_user.roles" : { $elemMatch: { name: "Ordinary Employee"}}}]}
+                { "createdBy.roles" : { $elemMatch : { name: { $in: ["Ordinary Employee"] }}}}]}
           if (roles.includes("Ordinary Employee"))
             return {$or : [
                 { "author_user.id" : user.id },
-                { "executor_user.id" : user.id }]}
-        }
-      },
-      {
-        displayName: 'Is author or executor',
-        name: 'is-author-or-executor',
-        plugin: 'admin',
-        async handler(user) {
-          return { $or : [{ "author_user.id" : user.id }, { "executor_user.id" : user.id }]}
+                { "executor_user.id" : user.id}]}
         }
       }
     ]);
