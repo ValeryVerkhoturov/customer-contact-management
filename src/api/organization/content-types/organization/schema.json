@@ -46,6 +46,12 @@
       "type": "string",
       "required": true,
       "maxLength": 50
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task",
+      "mappedBy": "organization"
     }
   }
 }
