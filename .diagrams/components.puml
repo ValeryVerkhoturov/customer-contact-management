@@ -1,0 +1,29 @@
+@startuml
+[Web Application] as webapp
+
+
+cloud {
+	[Strapi CMS] as strapi
+    () "REST API" as publicrest
+    webapp -- publicrest
+    strapi -- publicrest
+
+	package CloudFunctions {
+    	[mirea.ru parser] as mirearu
+        [IKTST vk group parser] as iktst
+        [IIT vk group parser] as iit
+        () "REST API" as sectretrest
+    }
+    strapi -- sectretrest
+    iktst -- sectretrest
+    iit -- sectretrest
+    mirearu -- sectretrest
+}
+
+database {
+	[PostgreSQL] as db
+    () "HTTPS" as https
+    strapi -- https
+    db -- https
+}
+@enduml

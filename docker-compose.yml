@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  strapi:
+    image: strapi/strapi
+    container_name: customer-contact-management
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi1
+      DATABASE_HOST: postgres1
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi1
+      DATABASE_PASSWORD: strapi1
+    volumes:
+      - ./app:/srv/app
+    ports:
+      - '1337:1337'
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    container_name: customer-contact-management-postgresql
+    environment:
+      POSTGRES_DB: strapi1
+      POSTGRES_USER: strapi1
+      POSTGRES_PASSWORD: strapi1
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: customer-contact-management-pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: strapi1@strapi1.com
+      PGADMIN_DEFAULT_PASSWORD: strapi1
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:

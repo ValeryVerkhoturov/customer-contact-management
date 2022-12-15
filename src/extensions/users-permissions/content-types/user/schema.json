@@ -67,7 +67,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::contact-pearson.contact-pearson",
-      "inversedBy": "user"
+      "mappedBy": "user"
     }
   }
 }

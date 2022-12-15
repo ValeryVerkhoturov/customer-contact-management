@@ -23,18 +23,13 @@
     },
     "date_of_task_creation": {
       "type": "datetime",
-      "required": true
+      "required": false
     },
     "execution_date_from": {
-      "type": "date"
+      "type": "datetime"
     },
-    "execution_date_to": {
-      "type": "date"
-    },
-    "is_finished": {
-      "type": "boolean",
-      "default": false,
-      "required": true
+    "execution_plan_date_to": {
+      "type": "datetime"
     },
     "author_user": {
       "type": "relation",
@@ -54,6 +49,20 @@
         "high"
       ],
       "required": true
+    },
+    "execution_actual_date_to": {
+      "type": "date"
+    },
+    "is_finished": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "tasks"
     }
   }
 }
