@@ -1,0 +1,207 @@
+{
+  "version": 2,
+  "data": {
+    "api::task.task": {
+      "22": {
+        "id": 22,
+        "contract_number": "Насрать под дверь",
+        "createdAt": "2022-10-14T15:41:03.632Z",
+        "updatedAt": "2022-10-24T09:21:12.859Z",
+        "equipment_serial_number": null,
+        "date_of_task_creation": "2022-10-03T21:00:00.000Z",
+        "execution_date_from": "2022-10-19T21:00:00.000Z",
+        "publishedAt": "2022-10-24T09:14:53.944Z",
+        "priority": "high",
+        "execution_plan_date_to": "2022-10-19T21:00:00.000Z",
+        "is_finished": true,
+        "execution_actual_date_to": "2022-10-20",
+        "author_user": null,
+        "executor_user": null,
+        "organization": 1,
+        "createdBy": null,
+        "updatedBy": null
+      },
+      "23": {
+        "id": 23,
+        "contract_number": "Помочь бабушке перейти через дорогу",
+        "createdAt": "2022-10-14T15:44:31.839Z",
+        "updatedAt": "2022-10-24T09:20:59.753Z",
+        "equipment_serial_number": null,
+        "date_of_task_creation": "2022-10-10T21:00:00.000Z",
+        "execution_date_from": "2022-10-11T21:00:00.000Z",
+        "publishedAt": "2022-10-18T17:14:14.992Z",
+        "priority": "low",
+        "execution_plan_date_to": "2022-10-11T21:00:00.000Z",
+        "is_finished": true,
+        "execution_actual_date_to": "2022-10-15",
+        "author_user": null,
+        "executor_user": null,
+        "organization": 2,
+        "createdBy": null,
+        "updatedBy": null
+      },
+      "31": {
+        "id": 31,
+        "contract_number": "Деловая поездка",
+        "createdAt": "2022-10-14T16:08:27.828Z",
+        "updatedAt": "2022-10-24T09:20:45.274Z",
+        "equipment_serial_number": null,
+        "date_of_task_creation": "2022-10-25T16:08:00.000Z",
+        "execution_date_from": "2022-10-04T21:00:00.000Z",
+        "publishedAt": "2022-10-24T09:20:45.267Z",
+        "priority": "high",
+        "execution_plan_date_to": "2022-10-17T21:00:00.000Z",
+        "is_finished": true,
+        "execution_actual_date_to": "2022-10-21",
+        "author_user": null,
+        "executor_user": null,
+        "organization": 3,
+        "createdBy": null,
+        "updatedBy": null
+      },
+      "32": {
+        "id": 32,
+        "contract_number": "Создать видимость работы",
+        "createdAt": "2022-10-20T18:10:13.886Z",
+        "updatedAt": "2022-10-24T09:18:15.100Z",
+        "equipment_serial_number": null,
+        "date_of_task_creation": "2022-10-20T18:10:13.886Z",
+        "execution_date_from": "2022-10-04T21:00:00.000Z",
+        "publishedAt": "2022-10-20T18:10:38.866Z",
+        "priority": "middle",
+        "execution_plan_date_to": "2023-10-25T21:00:00.000Z",
+        "is_finished": false,
+        "execution_actual_date_to": null,
+        "author_user": null,
+        "executor_user": null,
+        "organization": 1,
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "api::contact-pearson.contact-pearson": {
+      "1": {
+        "id": 1,
+        "first_name": "Николай",
+        "middle_name": "Сергеевич",
+        "last_name": "Котов",
+        "createdAt": "2022-09-26T13:22:36.757Z",
+        "updatedAt": "2022-10-24T09:10:38.720Z",
+        "publishedAt": "2022-10-20T12:51:57.444Z",
+        "organization": null,
+        "emails": null,
+        "phone_numbers": null,
+        "user": null,
+        "createdBy": null,
+        "updatedBy": null
+      },
+      "2": {
+        "id": 2,
+        "first_name": "Алексей",
+        "middle_name": "Петрович",
+        "last_name": "Пупкин",
+        "createdAt": "2022-10-17T08:31:23.815Z",
+        "updatedAt": "2022-10-24T09:09:27.690Z",
+        "publishedAt": "2022-10-20T12:37:03.859Z",
+        "organization": null,
+        "emails": null,
+        "phone_numbers": null,
+        "user": null,
+        "createdBy": null,
+        "updatedBy": null
+      }
+    },
+    "phone-number.phone-number": {
+      "1": {
+        "id": 1,
+        "phone_number": "89005552478"
+      },
+      "3": {
+        "id": 3,
+        "phone_number": "89851235314"
+      }
+    },
+    "email.email": {
+      "1": {
+        "id": 1,
+        "email": "dbc@icloud.com"
+      },
+      "5": {
+        "id": 5,
+        "email": "rogaikopita@icloud.com"
+      },
+      "6": {
+        "id": 6,
+        "email": "uyut@maail.ru"
+      }
+    },
+    "api::organization.organization": {
+      "1": {
+        "id": 1,
+        "organization_name": "Рога и копыта",
+        "createdAt": "2022-09-26T12:30:29.768Z",
+        "updatedAt": "2022-10-24T09:11:30.744Z",
+        "publishedAt": "2022-09-26T12:41:10.632Z",
+        "kind": "current",
+        "city": "Moscow",
+        "contact_pearsons": [
+          1
+        ],
+        "emails": [
+          5
+        ],
+        "phone_numbers": [
+          3
+        ],
+        "tasks": [
+          22,
+          32
+        ],
+        "createdBy": 1,
+        "updatedBy": 1
+      },
+      "2": {
+        "id": 2,
+        "organization_name": "Да будет свет",
+        "createdAt": "2022-10-10T06:03:32.055Z",
+        "updatedAt": "2022-10-24T09:13:18.716Z",
+        "publishedAt": "2022-10-20T11:58:21.459Z",
+        "kind": "current",
+        "city": "Moscow",
+        "contact_pearsons": [],
+        "emails": [
+          1
+        ],
+        "phone_numbers": [
+          1
+        ],
+        "tasks": [
+          23
+        ],
+        "createdBy": 1,
+        "updatedBy": 1
+      },
+      "3": {
+        "id": 3,
+        "organization_name": "Домашний уют",
+        "createdAt": "2022-10-20T12:00:43.779Z",
+        "updatedAt": "2022-10-24T09:20:19.468Z",
+        "publishedAt": "2022-10-20T12:05:18.844Z",
+        "kind": "potential",
+        "city": "St. Petersburg",
+        "contact_pearsons": [
+          2
+        ],
+        "emails": [
+          6
+        ],
+        "phone_numbers": [],
+        "tasks": [
+          31
+        ],
+        "createdBy": 1,
+        "updatedBy": 1
+      }
+    }
+  }
+}

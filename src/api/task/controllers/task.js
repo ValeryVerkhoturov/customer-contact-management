@@ -1,35 +1,34 @@
 'use strict';
 
+const {getService, sanitize} = require("@strapi/plugin-users-permissions/server/utils");
 /**
  * task controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
+const sanitizeOutput = (task) => {
+  let { publishedAd, ...sanitizedTask} = task;
+  return sanitizedTask;
+};
+
 module.exports = createCoreController('api::task.task', ({ strapi }) => ({
-
   async find(ctx) {
-
-    const { organization } = await strapi.db.query('api::contact-pearson.contact-pearson').findOne({
+    let { user } = ctx.state;
+    const { id : contactPersonId } = await strapi.db.query('api::contact-pearson.contact-pearson').findOne({
       select: [],
-      where : {
-        user : ctx.state.user.id
-      },
-      populate: ['organization']});
-
-
-    const { data, meta } = await super.find(ctx);
-    console.log(data);
-    data.filter(task => task.organization.id === organization.id);
-
-
-    // let query = await strapi.db.query('api::task.task').findMany({
-    //   where : {
-    //     organization : organization.id
-    //   },
-    //   populate: ['organization']});
-    // query = this.find(query);
-
-    return this.sanitizeOutput({ data, meta }, ctx);
+      where: { user : user },
+    });
+    const organizations = await strapi.db.query('api::organization.organization').findMany({
+      select: [],
+      populate: ['contact_pearsons'],
+    });
+    for (let organization of organizations) {
+      if (organization.contact_pearsons.find(contactPerson => contactPerson.id === contactPersonId)) {
+        let tasks =  await strapi.db.query('api::task.task').findMany(
+          { where: { organization : organization.id, publishedAt : { $not : null } }});
+        return { data: tasks.map(task => sanitizeOutput(task)), meta: { count: tasks.length } };
+      }
+    }
   },
 }));
